@@ -60,25 +60,14 @@ run. The build is configured to download the latest `benchmark` library using
 The following steps should build the example using an out-of-source build 
 folder.
 
-### Windows
+### Windows/Linux
 
 Open a `x64 Native Tools Command Prompt for VS 2019` and execute the following:
 
-```batch
-mkdir build && cd build
-cmake ../src
-msbuild Benchmarks.sln -p:Configuration=Release
+```command line
+cmake -S src -B build
+cmake --build build --target=ALL_BUILD
 ```
-
-### Linux
-
-Execute the following from a `bash` shell:
-```bash
-mkdir build && cd build
-cmake ../src -DCMAKE_BUILD_TYPE=Release
-make
-```
-
 ## Usage
 
 To run the benchmark execute the following from the `build` folder:
